@@ -100,7 +100,7 @@ if(isMobile.iOS()){
   const modelViewer = document.querySelector("model-viewer");
   window.switchSrc = (element, name, ios, android) => {
     const base = "models/" + name;
-    const silka = "models/" + ios;
+    const silka = base + '.usdz';
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.png';
     const slides = document.querySelectorAll(".slide");
