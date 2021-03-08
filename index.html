@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script src="jquery-min-1-10-2.js"></script>
+    <!--<script>
+        var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+/* if the device is not ios hide the download button */
+if(isMobile.iOS()){
+    alert('ios version');
+       $(".hide").css("visibility", "visible");
+};
+        if(isMobile.Android){
+            alert('android version');
+            $(".hide").css("visibility", "hidden");
+        };
+</script>-->
+</head>
+<body>
+ <!--<script>
+        $(document).ready(function(){
+            $("div#text").click(function(e) {
+                e.preventDefault();
+                
+                $("#next").attr("src", $(this).attr("href"));
+            })
+        })
+    </script>-->
+  
+   <img src="resources/banipk.png" id="logo">
+   <!-- <div id="text">
+       <button id="back" onclick="window.location.replace('chair_pollok_legs.html')"><img src="resources/back.svg"></button>
+       <p id="nazvanie">Pollok Wood</p>
+   </div> -->
+    <model-viewer src="poster/grayblack.glb" poster="poster/grayblack.png" shadow-intensity="1" ar ar-scale="fixed" camera-controls camera-orbit="45deg 55deg 2.5m" alt="A 3D model carousel"
+    poster="">
+
+  <div id="ar-prompt">
+    <img src="resources/hand.png">
+  </div>
+  <div class="slider">
+    <div class="slides">
+      <button class="slide selected" id="first" onclick="switchSrc(this, 'grayblack', 'grayblack.usdz', 'grayblack.glb')" style="background-image: url('poster/grayblack.png');">
+
+      </button><button class="slide" id="second" onclick="switchSrc(this, 'grayblue', 'brograybluewn.usdz', 'grayblue.glb')" style="background-image: url('poster/grayblue.png');">
+      
+      </button><button class="slide" id="third" onclick="switchSrc(this, 'graycoffee', 'graycoffee.usdz', 'graycoffee.glb')" style="background-image: url('poster/graycoffee.png');">
+      
+      </button><button class="slide" id="forth" onclick="switchSrc(this, 'grayorex', 'grayorex.usdz', 'grayorex.glb')" style="background-image: url('poster/grayorex.png');">    
+    </button>
+    <button class="slide" id="fith" onclick="switchSrc(this, 'graysosna', 'graysosna.usdz', 'graysosna.glb')" style="background-image: url('poster/graysosna.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'graywhite', 'graywhite.usdz', 'graywhite.glb')" style="background-image: url('poster/graywhite.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'greenblack', 'greenblack.usdz', 'greenblack.glb')" style="background-image: url('poster/greenblack.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'greenblue', 'greenblue.usdz', 'greenblue.glb')" style="background-image: url('poster/greenblue.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'greencoffee', 'greencoffee.usdz', 'greencoffee.glb')" style="background-image: url('poster/greencoffee.png');"> 
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'greenorex', 'greenorex.usdz', 'greenorex.glb')" style="background-image: url('poster/greenorex.png');">    
+    </button>
+    <button class="slide" id="fith" onclick="switchSrc(this, 'greensosna', 'greensosna.usdz', 'greensosna.glb')" style="background-image: url('poster/greensosna.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'redblack', 'redblack.usdz', 'redblack.glb')" style="background-image: url('poster/redblack.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'redblue', 'redblue.usdz', 'redblue.glb')" style="background-image: url('poster/redblue.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'redcoffee', 'redcoffee.usdz', 'redcoffee.glb')" style="background-image: url('poster/redcoffee.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'redsosna', 'redsosna.usdz', 'redsosna.glb')" style="background-image: url('poster/redsosna.png');"> 
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'redorex', 'redorex.usdz', 'redorex.glb')" style="background-image: url('poster/redorex.png');">    
+    </button>
+    <button class="slide" id="sixth" onclick="switchSrc(this, 'redwhite', 'redwhite.usdz', 'redwhite.glb')" style="background-image: url('poster/redwhite.png');">    
+    </button>
+    </div>
+  </div>
+  <a rel="ar" id="next" >ОТКРЫТЬ ПРОСМОТР AR</a>
+  <a id="mod" href='https://banipk.ru'>УЗНАТЬ СТОИМОСТЬ</a>
+</model-viewer>
+
+<script type="module">
+  const modelViewer = document.querySelector("model-viewer");
+  window.switchSrc = (element, name, ios, android) => {
+    const base = "poster/" + name;
+    const silka = "poster/" + ios;
+    modelViewer.src = base + '.glb';
+    modelViewer.poster = base + '.png';
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach((element) => {element.classList.remove("selected");});
+    element.classList.add("selected");
+    document.querySelector("#back").onclick = function () {
+      window.location.replace("chair_pollok_legs.html");
+    console.log("back");
+     };
+      document.querySelector('#next').onclick = function () {
+              window.open(silka);
+            };
+  };
+
+  document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+    // Keep slider interactions from affecting the XR scene.
+    ev.preventDefault();
+  });
+</script>
+<script src="js/choice.js"></script>
+<script type="application/javascript">
+    const linkElement = document.getElementById("next");
+    linkElement.addEventListener("message", function (event) {
+        if(event.data == "_apple_ar_quicklook_button_tapped") {
+            window.open("https://www.modernist.su/cf/tproduct/174336961-720986339878-stul-matiss-wood-cf");
+        }
+    },false);
+</script>
+<style>
+  /* This keeps child nodes hidden while the element loads */
+    :not(:defined) > * {
+    display: none;
+  }
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+#nazvanie {
+      margin-top: -2%;
+      font-size: 72px;
+    }
+  model-viewer {
+      width: 100%;
+      display: flex;
+      position: absolute;
+      height: 80%;
+      bottom: 0%;
+    background-color: white;
+    --poster-color: white;
+  }
+    
+    
+    #text {
+        display: flex;
+    position: fixed;
+    color: #2f3640;
+    font-size: 38px;
+    top: 10%;
+
+    }
+    
+    #logo {
+    display: flex;
+    position: absolute;
+    color: #2f3640;
+    font-size: 25px;
+    top: 4%;
+    width: 200px;
+}
+  #ar-button {
+    background-image: url(resources/icon.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 22px 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+      bottom: 15%;
+    transform: translateX(-50%);
+    bottom: 132px;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 22px;
+    color:#4285f4;
+    height: 76px;
+      width: 390px;
+    line-height: 36px;
+    border-radius: 38px;
+    border: 1px solid #DADCE0;
+  }
+    #mod{
+        background-image: url(resources/dollor.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 20px 50%;
+    background-color: #fff;
+    position: fixed;
+    left: 56%;
+    transform: translateX(-10%);
+    bottom: 252px;
+    padding: 0px 16px 2px 44px;
+    font-family: Roboto medium, Helvetica Neue, sans-serif;
+    font-size: 24px;
+        text-align: center;
+        text-decoration-line: none;
+    color:brown;
+    height: 76px;
+      width: 390px;
+    line-height: 70px;
+    outline-width: px;
+    border-radius: 0px;
+    border: 2px solid #DADCE0;
+        display:;
+    }
+    #next{
+        background-image: url(resources/icon.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 20px 50%;
+    background-color: #fff;
+    position: fixed;
+    right: 47%;
+      bottom: 15%;
+    transform: translateX(-10%);
+    bottom: 252px;
+    padding: 0px 16px 2px 44px;
+    font-family: Roboto medium, Helvetica Neue, sans-serif;
+    font-size: 24px;
+        text-align: center;
+        text-decoration-line: none;
+    color:blue;
+    height: 76px;
+      width: 390px;
+    line-height: 70px;
+    outline-width: 2px;
+    border-radius: 0px;
+    border: 2px solid #DADCE0;
+    }
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+  #back{
+        outline: none;
+        color: transparent; background-color: transparent;
+    position: fixed;
+        width: 120px;
+        height: 80px;
+                left: 10%;
+    top: 11.8%;
+    }
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 100%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 175px;
+    height: 175px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 25px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+</style>
+</body>
+</html>
