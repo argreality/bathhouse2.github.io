@@ -106,13 +106,9 @@ if(isMobile.iOS()){
     const slides = document.querySelectorAll(".slide");
     slides.forEach((element) => {element.classList.remove("selected");});
     element.classList.add("selected");
-    document.querySelector("#back").onclick = function () {
-      window.location.replace("chair_pollok_legs.html");
-    console.log("back");
-     };
-      document.querySelector('#next').onclick = function () {
-              window.open(silka);
-            };
+    document.querySelector('#next').onclick = function () {
+        window.open(silka);
+    };
   };
 
   document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
