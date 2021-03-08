@@ -99,7 +99,7 @@ if(isMobile.iOS()){
 <script type="module">
   const modelViewer = document.querySelector("model-viewer");
   window.switchSrc = (element, name, ios, android) => {
-    const base = "poster/" + name;
+    const base = "models/" + name;
     const silka = "poster/" + ios;
     modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.png';
