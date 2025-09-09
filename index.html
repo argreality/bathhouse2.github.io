@@ -9,8 +9,8 @@
 <body>
    <img src="resources/sticker.webp" id="logo">
    
-    <model-viewer src="1.glb"
-                  ios-src="1.usdz"
+    <model-viewer src="models/1.glb"
+                  ios-src="models/1.usdz"
                   poster="poster/1.png"
                   shadow-intensity="1" 
                   ar 
@@ -26,13 +26,13 @@
   
   <div class="slider">
     <div class="slides">
-      <button class="slide" id="fith" onclick="switchSrc(this, '1', '1.usdz', '1.glb')" style="background-image: url('poster/1.png');">
+      <button class="slide" id="fith" onclick="switchSrc(this, '1', '1.usdz', '1.glb')" style="background-image: url('poster/graysosna.png');">
       </button>
-      <button class="slide" id="sixth" onclick="switchSrc(this, '2', '2.usdz', '2.glb')" style="background-image: url('poster/2.png');">
+      <button class="slide" id="sixth" onclick="switchSrc(this, '2', '2.usdz', '2.glb')" style="background-image: url('poster/graywhite.png');">
       </button>
-      <button class="slide" id="green1" onclick="switchSrc(this, '3', '3.usdz', '3.glb')" style="background-image: url('poster/3.png');">
+      <button class="slide" id="green1" onclick="switchSrc(this, '3', '3.usdz', '3.glb')" style="background-image: url('poster/greenblack.png');">
       </button>
-      <button class="slide" id="green2" onclick="switchSrc(this, '4', '4.usdz', '4.glb')" style="background-image: url('poster/4.png');">
+      <button class="slide" id="green2" onclick="switchSrc(this, '4', '4.usdz', '4.glb')" style="background-image: url('poster/greenblue.png');">
       </button>
     </div>
   </div>
@@ -44,7 +44,7 @@
   const modelViewer = document.querySelector("model-viewer");
   
   window.switchSrc = (element, name, ios, android) => {
-    const base = name;
+    const base = "/models" + name;
     const glbPath = base + '.glb';
     const usdzPath = base + '.usdz';
     const posterPath = "poster/" + name + '.png';
@@ -603,5 +603,3 @@
 </style>
 </body>
 </html>
-
-
