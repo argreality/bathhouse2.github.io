@@ -44,7 +44,7 @@
   const modelViewer = document.querySelector("model-viewer");
   
   window.switchSrc = (element, name, ios, android) => {
-    const base = "/models" + name;
+    const base = "models/" + name;
     const glbPath = base + '.glb';
     const usdzPath = base + '.usdz';
     const posterPath = "poster/" + name + '.png';
@@ -603,3 +603,4 @@
 </style>
 </body>
 </html>
+
